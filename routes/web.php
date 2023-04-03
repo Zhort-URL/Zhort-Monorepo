@@ -26,6 +26,7 @@ Route::get('/dashboard', DashboardController::class)
 
 Route::prefix('admin')->group(function () {
     Route::get('/users', [UserController::class, 'index'])->name('admin.users');
+    Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('admin.users.destroy');
 })->middleware(['auth']);
 
 Route::middleware('auth')->group(function () {

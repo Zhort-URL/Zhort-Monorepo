@@ -12,14 +12,20 @@
         <link href="https://fonts.bunny.net/css?family=karla:400,500,600&display=swap" rel="stylesheet"/>
         <link href="https://fonts.bunny.net/css?family=inconsolata:400,500,600&display=swap" rel="stylesheet"/>
 
+        <!-- CSS -->
+        @notifyCss
+
         <!-- Scripts -->
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
         @vite(['resources/css/app.css'/*, 'resources/js/app.js'*/])
+        @notifyJs
     </head>
     <body class="font-sans antialiased dark:bg-zhort-darker">
         <div class="min-h-screen">
             <!-- Sidebar loads content, must be included. -->
             @include('layouts.sidebar')
+            @include('notify::components.notify')
+
         </div>
     </body>
 </html>
